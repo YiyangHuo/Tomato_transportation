@@ -53,7 +53,7 @@ if __name__ == "__main__":
 
     csv_logger = CSVLogger('log.csv', append=True, separator=';')
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
-    history = model.fit(Inputs, Rej_rate, epochs=10, batch_size=10, callbacks=[csv_logger])
+    history = model.fit(Inputs, Rej_rate, epochs=150, batch_size=10, callbacks=[csv_logger])
     model.save("./models/random_model.h5")
 
     print(history.history.keys())
